@@ -1,0 +1,39 @@
+.container {
+    height: 600px;
+    width: 100%;
+    background-color: gray;
+}
+
+.title {
+    text-align: center;
+}
+
+.rockImg,
+.paperImg,
+.scissorsImg {
+    height: 230px;
+    width: 180px;
+    border-radius: 25px;
+}
+
+.rockButt,
+.paperButt,
+.scissorsButt {
+    height: 75px;
+    width: 125px;
+    font-size: 25px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+    padding-top: 75px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    padding-top: 50px;
+}

@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock_Paper_Scissors</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <div class="container">
         <h1 class="title">Rock Paper Scissors!</h1>
-        <img class="rockImg" src="rock.jpg" alt="hand with rock">
-        <img class="paperImg" src="paper.jpg" alt="hand with paper">
-        <img class="scissorsImg" src="scissors.jpg" alt="hand with scissors">
-        <button class="rockButt" type="button">Rock</button>
-        <button class="paperButt" type="button">Paper</button>
-        <button class="scissorsButt" type="button">Scissors</button>
+        <div class="images">
+            <img class="rockImg" src="rock.jpg" alt="hand with rock">
+            <img class="paperImg" src="paper.jpg" alt="hand with paper">
+            <img class="scissorsImg" src="scissors.jpg" alt="hand with scissors">
+        </div>
+        <div class="buttons">
+            <button class="rockButt" inline="true" type="button">Rock</button>
+            <button class="paperButt" inline="true" type="button">Paper</button>
+            <button class="scissorsButt" inline="true" type="button">Scissors</button>
+        </div>
     </div>
     <script>
         let playerScore=0
