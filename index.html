@@ -16,12 +16,49 @@
             <img class="scissorsImg" src="scissors.jpg" alt="hand with scissors">
         </div>
         <div class="buttons">
-            <button class="rockButt" inline="true" type="button">Rock</button>
-            <button class="paperButt" inline="true" type="button">Paper</button>
-            <button class="scissorsButt" inline="true" type="button">Scissors</button>
+            <button class="rockButt" onclick="game(round('rock'))" type="button">Rock</button>
+            <button class="paperButt" onclick="game(round('paper'))" type="button">Paper</button>
+            <button class="scissorsButt" onclick="game(round('scissors'))" type="button">Scissors</button>
+        </div>
+        <div class="results">
+            <h3 class="resultsTxt">Results</h3>
+            <div id="resultsCont"></div>
         </div>
     </div>
     <script>
+        function round(playerChoice) {
+            let hand='empty';
+            let answer='no'
+            num=Math.floor(Math.random()*3);
+            if(num==0) {
+                hand='rock';
+            }
+            else if(num==1) {
+                hand='paper';
+            }
+            else if(num==2) {
+                hand='scissors';
+            }
+            if ((playerChoice=='rock'&&computerSelection=='rock')||(playerChoice=='paper'&&computerSelection=='paper')||(playerChoice=='scissors'&&computerSelection=='scissors')) {
+                answer=("It's a tie! "+playerChoice+" doesn't beat "+computerSelection)
+            }
+            if ((playerChoice=='rock'&&computerSelection=='scissors')||(playerChoice=='paper'&&computerSelection=='rock')||(playerChoice=='scissors'&&computerSelection=='paper')) {
+                answer=("Congrats! You win! "+playerChoice+" beats "+computerSelection)
+            }
+            if ((playerChoice=='rock'&&computerSelection=='paper')||(playerChoice=='paper'&&computerSelection=='scissors')||(playerChoice=='scissors'&&computerSelection=='rock')) {
+                answer=("Oh no! You lost. "+playerChoice+" looses to "+computerSelection)
+            }
+            return(answer);
+        }
+
+        function game(answer) {
+            document.getElementById('resultsCont').innerHTML=answer;
+        }
+        
+
+      
+        
+        /*
         let playerScore=0
         let computerScore=0
         function computerPlay() {
@@ -39,15 +76,15 @@
             return(hand)
         }
         function round(playerSelection,computerSelection) {
-            playerHand=playerSelection.toLowerCase()
-            if ((playerHand=="rock"&&computerSelection=="rock")||(playerHand=="paper"&&computerSelection=="paper")||(playerHand=="scissors"&&computerSelection=="scissors")) {
-                return("It's a tie! "+playerHand+" doesn't beat "+computerSelection)
+            playerChoice=playerSelection.toLowerCase()
+            if ((playerChoice=="rock"&&computerSelection=="rock")||(playerChoice=="paper"&&computerSelection=="paper")||(playerChoice=="scissors"&&computerSelection=="scissors")) {
+                return("It's a tie! "+playerChoice+" doesn't beat "+computerSelection)
             }
-            if ((playerHand=="rock"&&computerSelection=="scissors")||(playerHand=="paper"&&computerSelection=="rock")||(playerHand=="scissors"&&computerSelection=="paper")) {
-                return("Congrats! You win! "+playerHand+" beats "+computerSelection)
+            if ((playerChoice=="rock"&&computerSelection=="scissors")||(playerChoice=="paper"&&computerSelection=="rock")||(playerChoice=="scissors"&&computerSelection=="paper")) {
+                return("Congrats! You win! "+playerChoice+" beats "+computerSelection)
             }
-            if ((playerHand=="rock"&&computerSelection=="paper")||(playerHand=="paper"&&computerSelection=="scissors")||(playerHand=="scissors"&&computerSelection=="rock")) {
-                return("Oh no! You lost. "+playerHand+" looses to "+computerSelection)
+            if ((playerChoice=="rock"&&computerSelection=="paper")||(playerChoice=="paper"&&computerSelection=="scissors")||(playerChoice=="scissors"&&computerSelection=="rock")) {
+                return("Oh no! You lost. "+playerChoice+" looses to "+computerSelection)
             }
         }
         function game() {
@@ -77,6 +114,7 @@
             }
         }
         game()
+        */
     </script>
 </body>
 </html>
